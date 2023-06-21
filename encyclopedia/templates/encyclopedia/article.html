@@ -1,16 +1,15 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    Article
+    {{title}}
 {% endblock %}
 
 {% block body %}
-    <h1>Article/h1>
 
-    <ul>
-        {% for entry in entries %}
-            <li>{{ entry }}</li>
-        {% endfor %}
-    </ul>
+{% if articles == none %}
+<h2> NO </h2>
+{% else %}
+{{ articles|safe }}
+{% endif %}
 
 {% endblock %}
